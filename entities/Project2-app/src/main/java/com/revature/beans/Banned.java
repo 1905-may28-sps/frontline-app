@@ -4,11 +4,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
+@Table(name="F_BANNED")
 public class Banned {
 
     @Id

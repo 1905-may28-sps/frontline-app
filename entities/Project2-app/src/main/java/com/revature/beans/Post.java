@@ -9,11 +9,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
+@Table(name="F_POST")
 public class Post {
 	@Id
 	@SequenceGenerator(name="POST_SEQ_GEN", sequenceName="POST_SEQ", allocationSize=1)
@@ -22,7 +24,7 @@ public class Post {
 	@ManyToOne(fetch=FetchType.EAGER)
 
 	@JoinColumn(name="userId", nullable=false)
-	private FUser user;
+	private User user;
 	@Column(nullable=true)
 	private String body;
 	@Column(nullable=true)
@@ -34,7 +36,7 @@ public class Post {
 
 	public Post() {}
 
-	public Post(int postId, FUser user, String body, String image, String title, String timestamp) {
+	public Post(int postId, User user, String body, String image, String title, String timestamp) {
 		super();
 		this.postId = postId;
 		this.user = user;
@@ -52,11 +54,11 @@ public class Post {
 		this.postId = postId;
 	}
 
-	public FUser getUser() {
+	public User getUser() {
 		return user;
 	}
 
-	public void setUser(FUser user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 

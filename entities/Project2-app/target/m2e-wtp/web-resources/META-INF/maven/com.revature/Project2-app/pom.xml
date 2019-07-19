@@ -23,6 +23,11 @@
 	</dependencyManagement>
 	<dependencies>
 		<!-- Spring -->
+		
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -39,6 +44,14 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 		</dependency>
+		 <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+        </dependency>
+            <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+        </dependency>
 
 		<!-- OJDBC 7 LOCAL REPO -->
 		<!-- if you need to reinstall the jdbc jar to your .m2 folder open cmd 

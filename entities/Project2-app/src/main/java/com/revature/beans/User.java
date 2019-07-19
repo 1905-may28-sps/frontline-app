@@ -7,13 +7,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
 
 @Component
 @Entity
-public class FUser {
+@Table(name="F_USER")
+public class User {
  
     
     @Id
@@ -46,10 +48,10 @@ public class FUser {
     
     
     
-    public FUser() {}
+    public User() {}
 
 
-	public FUser(int userId, String username, String firstName, String lastName, Role roleId, String image,
+	public User(int userId, String username, String firstName, String lastName, Role roleId, String image,
 			Banned bannedId, Theme themeId) {
 		super();
 		this.userId = userId;

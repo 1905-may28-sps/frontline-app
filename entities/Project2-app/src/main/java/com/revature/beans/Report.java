@@ -10,11 +10,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
+@Table(name="F_REPORT")
 public class Report {
 	@Id
 	@SequenceGenerator(name="REPORT_SEQ_GEN", sequenceName="REPORT_SEQ", allocationSize=1)
@@ -31,11 +33,11 @@ public class Report {
 	
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="reporterId", nullable=false)
-	private FUser reporter;
+	private User reporter;
 	
 	public Report() {}
 
-	public Report(int reportId, ReportType reportType, Post post, FUser reporter) {
+	public Report(int reportId, ReportType reportType, Post post, User reporter) {
 		super();
 		this.reportId = reportId;
 		this.reportType = reportType;
@@ -67,11 +69,11 @@ public class Report {
 		this.post = post;
 	}
 
-	public FUser getReporter() {
+	public User getReporter() {
 		return reporter;
 	}
 
-	public void setReporter(FUser reporter) {
+	public void setReporter(User reporter) {
 		this.reporter = reporter;
 	}
 	

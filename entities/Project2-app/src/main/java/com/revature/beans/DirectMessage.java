@@ -9,11 +9,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
+@Table(name="F_DIRECTMESSAGE")
 public class DirectMessage {
     
     @Id
@@ -27,17 +29,17 @@ public class DirectMessage {
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="senderId", nullable=false)
    // @Column(nullable=false)
-    private FUser sender;
+    private User sender;
     
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="userId", nullable=false)
    // @Column(nullable=false)
-    private FUser reciever; 
+    private User reciever; 
     
     public DirectMessage () {}
 
    
-    public DirectMessage(int directMessageId, String body, FUser sender, FUser reciever) {
+    public DirectMessage(int directMessageId, String body, User sender, User reciever) {
 		super();
 		this.directMessageId = directMessageId;
 		this.body = body;
@@ -66,22 +68,22 @@ public class DirectMessage {
 	}
 
 
-	public FUser getSender() {
+	public User getSender() {
 		return sender;
 	}
 
 
-	public void setSender(FUser sender) {
+	public void setSender(User sender) {
 		this.sender = sender;
 	}
 
 
-	public FUser getReciever() {
+	public User getReciever() {
 		return reciever;
 	}
 
 
-	public void setReciever(FUser reciever) {
+	public void setReciever(User reciever) {
 		this.reciever = reciever;
 	}
 

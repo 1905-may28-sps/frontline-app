@@ -6,11 +6,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
+@Table(name="F_THEME")
 public class Theme {
     @Id
     @SequenceGenerator(name="THEME_SEQ_GEN", sequenceName="THEME_SEQ", allocationSize=1)

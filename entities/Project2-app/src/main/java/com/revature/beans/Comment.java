@@ -9,16 +9,18 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
 
 @Component
 @Entity
-public class FComment {
+@Table(name="F_COMMENT")
+public class Comment {
 	 @Id
-	 @SequenceGenerator(name="FComment_SEQ_GEN", sequenceName="FComment_SEQ", allocationSize=1)
-	 @GeneratedValue(generator="FComment_SEQ_GEN", strategy=GenerationType.SEQUENCE)
+	 @SequenceGenerator(name="F_Comment_SEQ_GEN", sequenceName="F_Comment_SEQ", allocationSize=1)
+	 @GeneratedValue(generator="F_Comment_SEQ_GEN", strategy=GenerationType.SEQUENCE)
 	private int id;
 	
 	@Column(nullable=false)
@@ -27,15 +29,15 @@ public class FComment {
 	 @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="userId", nullable=false)
 	
-	private FUser userId;
+	private User userId;
 	
 	 @ManyToOne(fetch=FetchType.EAGER)
 	    @JoinColumn(name="postId", nullable=false)
 	private Post postId;
 	
-	public FComment() {}
+	public Comment() {}
 
-	public FComment(int id, String timestamp, FUser userId, Post postId) {
+	public Comment(int id, String timestamp, User userId, Post postId) {
 		super();
 		this.id = id;
 		this.timestamp = timestamp;
@@ -59,11 +61,11 @@ public class FComment {
 		this.timestamp = timestamp;
 	}
 
-	public FUser getUserId() {
+	public User getUserId() {
 		return userId;
 	}
 
-	public void setUserId(FUser userId) {
+	public void setUserId(User userId) {
 		this.userId = userId;
 	}
 

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.revature.beans.FUser;
+import com.revature.beans.User;
 
 
 /*
@@ -25,11 +25,6 @@ import com.revature.beans.FUser;
 @Repository
 public class UserRepository {
 	
-	@Autowired
-	SessionFactory hello;
 	
-	public FUser getById(int id) {
-		return (FUser) hello.getCurrentSession().get(FUser.class, id); 
-	}
 
 }

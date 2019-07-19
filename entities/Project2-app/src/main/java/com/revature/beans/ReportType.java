@@ -6,12 +6,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-
+@Table(name="F_REPORTTYPE")
 public class ReportType {
 	@Id
 	@SequenceGenerator(name="REPORTTYPE_SEQ_GEN", sequenceName="REPORTTYPE_SEQ", allocationSize=1)
