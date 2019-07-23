@@ -33,7 +33,7 @@ public class User {
     private String lastName;
     
     @OneToOne
-    @Column(nullable=false)
+   
     private Role roleId;
     
     @Column(nullable=true)
@@ -43,16 +43,20 @@ public class User {
    
     private Banned bannedId;
     @OneToOne
-    @Column(nullable=false)
+ 
     private Theme themeId;
+    
+    @Column(nullable=false)
+    private String password;
     
     
     
     public User() {}
 
 
+
 	public User(int userId, String username, String firstName, String lastName, Role roleId, String image,
-			Banned bannedId, Theme themeId) {
+			Banned bannedId, Theme themeId, String password) {
 		super();
 		this.userId = userId;
 		this.username = username;
@@ -62,7 +66,9 @@ public class User {
 		this.image = image;
 		this.bannedId = bannedId;
 		this.themeId = themeId;
+		this.password = password;
 	}
+
 
 
 	public int getUserId() {
@@ -70,9 +76,11 @@ public class User {
 	}
 
 
+
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+
 
 
 	public String getUsername() {
@@ -80,9 +88,11 @@ public class User {
 	}
 
 
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
 
 
 	public String getFirstName() {
@@ -90,9 +100,11 @@ public class User {
 	}
 
 
+
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+
 
 
 	public String getLastName() {
@@ -100,9 +112,11 @@ public class User {
 	}
 
 
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
 
 
 	public Role getRoleId() {
@@ -110,9 +124,11 @@ public class User {
 	}
 
 
+
 	public void setRoleId(Role roleId) {
 		this.roleId = roleId;
 	}
+
 
 
 	public String getImage() {
@@ -120,9 +136,11 @@ public class User {
 	}
 
 
+
 	public void setImage(String image) {
 		this.image = image;
 	}
+
 
 
 	public Banned getBannedId() {
@@ -130,9 +148,11 @@ public class User {
 	}
 
 
+
 	public void setBannedId(Banned bannedId) {
 		this.bannedId = bannedId;
 	}
+
 
 
 	public Theme getThemeId() {
@@ -140,10 +160,24 @@ public class User {
 	}
 
 
+
 	public void setThemeId(Theme themeId) {
 		this.themeId = themeId;
 	}
-    
+
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
 
 
 }

@@ -14,15 +14,14 @@ import org.springframework.stereotype.Component;
 public class Banned {
 
     @Id
-    @SequenceGenerator(name="BANNED_SEQ_GEN", sequenceName="BANNED_U_SEQ", allocationSize=1)
     private int bannedId;
     @Column(nullable=false)
-    private int bannedType;
+    private String bannedType;
     
     public Banned() {    }
     
 
-	public Banned(int bannedId, int bannedType) {
+	public Banned(int bannedId, String bannedType) {
 		super();
 		this.bannedId = bannedId;
 		this.bannedType = bannedType;
@@ -37,11 +36,11 @@ public class Banned {
 		this.bannedId = bannedId;
 	}
 
-	public int getBannedType() {
+	public String getBannedType() {
 		return bannedType;
 	}
 
-	public void setBannedType(int bannedType) {
+	public void setBannedType(String bannedType) {
 		this.bannedType = bannedType;
 	}
 

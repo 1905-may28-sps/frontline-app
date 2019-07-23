@@ -17,16 +17,14 @@ import org.springframework.stereotype.Component;
 public class Role {
     
     @Id
-    @SequenceGenerator(name="ROLE_SEQ_GEN", sequenceName="ROLE_SEQ", allocationSize=1)
-    @GeneratedValue(generator="ROLE_SEQ_GEN", strategy=GenerationType.SEQUENCE)
     private int roleId;
     
     @Column(nullable=false)
-    private int roleType;
+    private String roleType;
     
     public Role () {}
 
-    public Role(int roleId, int roleType) {
+    public Role(int roleId, String roleType) {
         super();
         this.roleId = roleId;
         this.roleType = roleType;
@@ -40,11 +38,11 @@ public class Role {
         this.roleId = roleId;
     }
 
-    public int getRoleType() {
+    public String getRoleType() {
         return roleType;
     }
 
-    public void setRoleType(int roleType) {
+    public void setRoleType(String roleType) {
         this.roleType = roleType;
     }
 
