@@ -29,20 +29,18 @@ public class Post {
 	private String body;
 	@Column(nullable=true)
 	private String image;
-	@Column(nullable=false)
-	private String title;
+	
 	@Column(nullable=false)
 	private String timestamp;
 
 	public Post() {}
 
-	public Post(int postId, User user, String body, String image, String title, String timestamp) {
+	public Post(int postId, User user, String body, String image, String timestamp) {
 		super();
 		this.postId = postId;
 		this.user = user;
 		this.body = body;
 		this.image = image;
-		this.title = title;
 		this.timestamp = timestamp;
 	}
 
@@ -78,14 +76,6 @@ public class Post {
 		this.image = image;
 	}
 
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
 	public String getTimestamp() {
 		return timestamp;
 	}
@@ -96,8 +86,8 @@ public class Post {
 
 	@Override
 	public String toString() {
-		return "Post [postId=" + postId + ", user=" + user + ", body=" + body + ", image=" + image + ", title=" + title
-				+ ", timestamp=" + timestamp + "]";
+		return "Post [postId=" + postId + ", user=" + user + ", body=" + body + ", image=" + image + ", timestamp="
+				+ timestamp + "]";
 	}
 
 	
