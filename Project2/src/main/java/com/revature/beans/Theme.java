@@ -20,11 +20,11 @@ public class Theme {
     private int themeId;
     
     @Column(nullable=false)
-    private int themeType;
+    private String themeType;
     
     public Theme(){}
 
-    public Theme(int themeId, int themeType) {
+    public Theme(int themeId,String themeType) {
         super();
         this.themeId = themeId;
         this.themeType = themeType;
@@ -38,11 +38,11 @@ public class Theme {
         this.themeId = themeId;
     }
 
-    public int getThemeType() {
+    public String getThemeType() {
         return themeType;
     }
 
-    public void setThemeType(int themeType) {
+    public void setThemeType(String themeType) {
         this.themeType = themeType;
     }
 

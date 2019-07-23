@@ -33,7 +33,7 @@ public class User {
     private String lastName;
     
     @OneToOne
-    @Column(nullable=false)
+   
     private Role roleId;
     
     @Column(nullable=true)
@@ -43,7 +43,7 @@ public class User {
    
     private Banned bannedId;
     @OneToOne
-    @Column(nullable=false)
+ 
     private Theme themeId;
     
     
