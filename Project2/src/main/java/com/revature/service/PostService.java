@@ -21,4 +21,5 @@ public class PostService {
 	public List<Post> getAll(){
 		return postRepo.findAll();
 	}
+	
 }
