@@ -24,6 +24,6 @@ import com.revature.beans.User;
 @Repository
 public interface UserRepository extends JpaRepository<User,Integer> {
 	
-	
+	User findByUsernameLikeIgnoreCaseAndPassword(String username, String password);
 
 }
