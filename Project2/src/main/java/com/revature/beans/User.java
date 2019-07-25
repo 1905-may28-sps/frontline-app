@@ -26,6 +26,8 @@ public class User {
     @Column(nullable=false, unique=true)
     private String username;
     
+    @Column(nullable=false, unique=true)
+    private String password;
     @Column(nullable=false)
     private String firstName;
     
@@ -46,27 +48,24 @@ public class User {
  
     private Theme themeId;
     
-    @Column(nullable=false)
-    private String password;
-    
     
     
     public User() {}
 
 
 
-	public User(int userId, String username, String firstName, String lastName, Role roleId, String image,
-			Banned bannedId, Theme themeId, String password) {
+	public User(int userId, String username, String password, String firstName, String lastName, Role roleId,
+			String image, Banned bannedId, Theme themeId) {
 		super();
 		this.userId = userId;
 		this.username = username;
+		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.roleId = roleId;
 		this.image = image;
 		this.bannedId = bannedId;
 		this.themeId = themeId;
-		this.password = password;
 	}
 
 
@@ -91,6 +90,18 @@ public class User {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 
@@ -167,17 +178,12 @@ public class User {
 
 
 
-	public String getPassword() {
-		return password;
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", firstName="
+				+ firstName + ", lastName=" + lastName + ", roleId=" + roleId + ", image=" + image + ", bannedId="
+				+ bannedId + ", themeId=" + themeId + "]";
 	}
-
-
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-
 
 
 }
