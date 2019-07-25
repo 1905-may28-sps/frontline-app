@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.revature.beans.Post;
-import com.revature.beans.User;
 import com.revature.repository.PostRepository;
 
 @Service
