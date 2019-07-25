@@ -26,8 +26,9 @@ public class User {
     @Column(nullable=false, unique=true)
     private String username;
     
-    @Column(nullable=false, unique=true)
+    @Column(nullable=false)
     private String password;
+    
     @Column(nullable=false)
     private String firstName;
     
@@ -174,15 +175,6 @@ public class User {
 
 	public void setThemeId(Theme themeId) {
 		this.themeId = themeId;
-	}
-
-
-
-	@Override
-	public String toString() {
-		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", firstName="
-				+ firstName + ", lastName=" + lastName + ", roleId=" + roleId + ", image=" + image + ", bannedId="
-				+ bannedId + ", themeId=" + themeId + "]";
 	}
 
 

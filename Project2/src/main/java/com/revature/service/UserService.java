@@ -26,5 +26,8 @@ public class UserService {
 		System.out.println("login");
 		return dao.findByUsernameLikeIgnoreCaseAndPassword(username,password);
 	}
-
+	
+	public User uploadImage() {
+	return null;
+	}
 }
