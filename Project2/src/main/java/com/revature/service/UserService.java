@@ -21,5 +21,10 @@ public class UserService {
 	public List<User> getAll(){
 		return dao.findAll();
 	}
+	public User login(String username, String password) {
+		System.out.println("login");
+		return dao.findByUsernameLikeIgnoreCaseAndPassword(username,password);
+
+	}
 
 }

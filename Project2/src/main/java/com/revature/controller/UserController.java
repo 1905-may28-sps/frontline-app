@@ -8,6 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -24,6 +25,25 @@ public class UserController {
 	@RequestMapping(value="/users", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<User>> findAll(){
 		return new ResponseEntity<List<User>>(service.getAll(), HttpStatus.OK);
+	}
+	
+	
+	//change to post
+	@RequestMapping(value="/users/login",method=RequestMethod.POST,
+			consumes=MediaType.APPLICATION_JSON_VALUE, 
+			produces=MediaType.APPLICATION_JSON_VALUE )
+	public ResponseEntity<User> login(@RequestBody User user) {
+		System.out.println("first thing that should show up");
+		
+		System.out.println(user);
+		User u = service.login(user.getUsername(), user.getPassword());
+		
+			if (u==null) {
+		return new ResponseEntity<User>(HttpStatus.CONFLICT);
+			}
+			else return new ResponseEntity<User>(u, HttpStatus.CREATED);
+				
+				//getUsername().equals("username") && user.getPassword().equals("password");
 	}
 	
 	

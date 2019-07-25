@@ -26,7 +26,7 @@ public class User {
     @Column(nullable=false, unique=true)
     private String username;
     
-    @Column(nullable=false, unique=true)
+    @Column(nullable=false)
     private String password;
     @Column(nullable=false)
     private String firstName;
@@ -48,16 +48,18 @@ public class User {
  
     private Theme themeId;
     
-    
+
     
     public User() {}
 
 
-	public User(int userId, String username, String firstName, String lastName, Role roleId, String image,
-			Banned bannedId, Theme themeId) {
+
+	public User(int userId, String username, String password, String firstName, String lastName, Role roleId,
+			String image, Banned bannedId, Theme themeId) {
 		super();
 		this.userId = userId;
 		this.username = username;
+		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.roleId = roleId;
@@ -65,6 +67,7 @@ public class User {
 		this.bannedId = bannedId;
 		this.themeId = themeId;
 	}
+
 
 
 	public int getUserId() {
@@ -72,9 +75,11 @@ public class User {
 	}
 
 
+
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+
 
 
 	public String getUsername() {
@@ -82,9 +87,23 @@ public class User {
 	}
 
 
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 
 
 	public String getFirstName() {
@@ -92,9 +111,11 @@ public class User {
 	}
 
 
+
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+
 
 
 	public String getLastName() {
@@ -102,9 +123,11 @@ public class User {
 	}
 
 
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
 
 
 	public Role getRoleId() {
@@ -112,9 +135,11 @@ public class User {
 	}
 
 
+
 	public void setRoleId(Role roleId) {
 		this.roleId = roleId;
 	}
+
 
 
 	public String getImage() {
@@ -122,9 +147,11 @@ public class User {
 	}
 
 
+
 	public void setImage(String image) {
 		this.image = image;
 	}
+
 
 
 	public Banned getBannedId() {
@@ -132,9 +159,11 @@ public class User {
 	}
 
 
+
 	public void setBannedId(Banned bannedId) {
 		this.bannedId = bannedId;
 	}
+
 
 
 	public Theme getThemeId() {
@@ -142,10 +171,11 @@ public class User {
 	}
 
 
+
 	public void setThemeId(Theme themeId) {
 		this.themeId = themeId;
 	}
-    
+
 
 
 }
