@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.revature.beans.User;
 import com.revature.repository.UserRepository;
+import com.revature.repository.uploadUserImage;
 
 @Service
 public class UserService {
@@ -21,13 +22,14 @@ public class UserService {
 	public List<User> getAll(){
 		return dao.findAll();
 	}
-	
+
 	public User login(String username, String password) {
 		System.out.println("login");
 		return dao.findByUsernameLikeIgnoreCaseAndPassword(username,password);
 	}
 	
-	public User uploadImage() {
-	return null;
+	public User uploadImage(String image, Integer userId) {
+		return dao.setUserInfoById(image, userId);
 	}
+
 }

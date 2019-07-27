@@ -16,7 +16,7 @@ import com.revature.beans.Comment;
 import com.revature.service.CommentService;
 
 @Controller
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin("*")
 @RequestMapping(value="/comment")
 
 public class CommentController {

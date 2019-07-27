@@ -17,7 +17,7 @@ import com.revature.beans.User;
 import com.revature.service.PostService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin("*")
 @RequestMapping("/post")
 public class PostController {
 	@Autowired
@@ -26,8 +26,8 @@ public class PostController {
 	@RequestMapping(method=RequestMethod.POST,
 			consumes=MediaType.APPLICATION_JSON_VALUE, 
 			produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Post> add(@RequestBody Post post){
-		Post p=service.add(post);
+	public ResponseEntity<Post> add(@RequestBody Post p){
+		p=service.add(p);
 		if(p == null) return new ResponseEntity<Post>(HttpStatus.CONFLICT);
 		return new ResponseEntity<Post>(p, HttpStatus.CREATED);
 	

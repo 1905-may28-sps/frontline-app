@@ -2,6 +2,8 @@
 package com.revature.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,6 +26,11 @@ import com.revature.beans.User;
 @Repository
 public interface UserRepository extends JpaRepository<User,Integer> {
 	
+
 	User findByUsernameLikeIgnoreCaseAndPassword(String username, String password);
+	
+	@Modifying(clearAutomatically=true)
+	@Query(value ="update F_USER u set u.image = ?1 where u.userId = ?2", nativeQuery=true)
+	 User setUserInfoById(String image, Integer userId);
 
 }
