@@ -12,36 +12,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.revature.beans.Post;
-import com.revature.beans.User;
-import com.revature.service.PostService;
+import com.revature.beans.Report;
+import com.revature.service.ReportService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/post")
-public class PostController {
+@RequestMapping("/report")
+public class ReportController {
 	@Autowired
-	private PostService service;
+	public ReportService service;
 	
 	@RequestMapping(method=RequestMethod.POST,
 			consumes=MediaType.APPLICATION_JSON_VALUE, 
 			produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Post> add(@RequestBody Post p){
-		p=service.add(p);
-		if(p == null) return new ResponseEntity<Post>(HttpStatus.CONFLICT);
-		return new ResponseEntity<Post>(p, HttpStatus.CREATED);
+	public ResponseEntity<Report> add(@RequestBody Report r){
+		r=service.add(r);
+		if(r == null) return new ResponseEntity<Report>(HttpStatus.CONFLICT);
+		return new ResponseEntity<Report>(r, HttpStatus.CREATED);
 	
 	}
-	
-//	@RequestMapping(method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
-//	public ResponseEntity<List<Post>> findAll(){
-//		return new ResponseEntity<List<Post>>(service.getAll(), HttpStatus.OK);
-//	}
 	
 	@RequestMapping(method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Post>> findAll(){
-		return new ResponseEntity<List<Post>>(service.getAllSafe(), HttpStatus.OK);
+	public ResponseEntity<List<Report>> findAll(){
+		return new ResponseEntity<List<Report>>(service.getAll(), HttpStatus.OK);
 	}
-	
 
 }

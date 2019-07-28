@@ -101,6 +101,15 @@ public class Post {
 		this.point = point;
 	}
 
+
+
+
+	@Override
+	public String toString() {
+		return "Post [postId=" + postId + ", user=" + user + ", body=" + body + ", timestamp=" + timestamp + ", point="
+				+ point + "]";
+	}
+
 	
 
 }
