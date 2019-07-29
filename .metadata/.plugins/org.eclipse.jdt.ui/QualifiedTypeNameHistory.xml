@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.revature.repository.ReactionRepository"/>
+<fullyQualifiedTypeName name="oracle.net.aso.e"/>
+<fullyQualifiedTypeName name="com.revature.beans.ReactionType"/>
+<fullyQualifiedTypeName name="com.revature.beans.Post"/>
+<fullyQualifiedTypeName name="com.revature.service.ReactionService"/>
+<fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+<fullyQualifiedTypeName name="com.revature.beans.Reaction"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+<fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,26 @@
+package com.revature.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.revature.beans.Post;
+import com.revature.beans.Reaction;
+import com.revature.beans.ReactionType;
+import com.revature.repository.ReactionRepository;
+
+@Service
+public class ReactionService {
+	@Autowired
+	ReactionRepository reactRepo;
+
+	public List<Reaction> getAll() {
+		return reactRepo.findAll();
+	}
+	
+	public Reaction add(Reaction r) {
+		return reactRepo.save(r);
+	}
+	
+}

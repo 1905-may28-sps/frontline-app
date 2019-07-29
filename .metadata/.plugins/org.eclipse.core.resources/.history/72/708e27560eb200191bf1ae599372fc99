@@ -1,0 +1,42 @@
+package com.revature.beans;
+
+import javax.persistence.*;
+
+@MappedSuperclass
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class Rating {
+
+    public static final short LIKE_VALUE = 1;
+    public static final short DISLIKE_VALUE = -1;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    protected User user;
+
+    protected int value;
+
+    public Rating(User user, int value) {
+        this.user = user;
+        this.value = value;
+    }
+
+    public Rating() {
+
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+}

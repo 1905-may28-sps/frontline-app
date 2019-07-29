@@ -1,0 +1,47 @@
+package com.revature.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.revature.beans.Post;
+import com.revature.beans.Reaction;
+import com.revature.beans.ReactionType;
+import com.revature.repository.ReactionRepository;
+
+@Service
+public class ReactionService {
+	@Autowired
+	ReactionRepository reactRepo;
+
+	public List<Reaction> getAll() {
+		return reactRepo.findAll();
+	}
+	
+	
+	public Reaction add(Reaction r) {
+		//update post points based on reaction
+		
+		switch("somewhere from client side?") {
+		  case 1:
+			  "if click thumbsup(1)"
+		    Post.setPoint(Post.getPoint() + 1); 
+		    break;
+		     
+		  case 2:
+			  "if click thumbsdown(2)"
+		    Post.setPoint(Post.getPoint() - 1);
+		    break;
+		  case 3:
+			  "if click smileface(3)"
+			Post.setPoint(Post.getPoint() + 2);
+			    break;
+		  default:    
+		}
+		
+		
+		return reactRepo.save(r);
+	}
+	
+}

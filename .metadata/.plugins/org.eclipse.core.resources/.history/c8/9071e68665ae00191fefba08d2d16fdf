@@ -1,0 +1,22 @@
+package com.revature.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.revature.beans.Post;
+import com.revature.repository.PostRepository;
+import com.revature.repository.ReactionRepository;
+
+public class PointService {
+	@Autowired
+	ReactionRepository reactRepo;
+	
+	public Point add(Point p) {
+		return reactRepo.save(p);
+	}
+	
+	public List<Post> getAll(){
+		return reactRepo.findAll();
+	}
+}

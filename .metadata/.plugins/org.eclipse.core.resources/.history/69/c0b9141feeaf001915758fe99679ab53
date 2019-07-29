@@ -1,0 +1,9 @@
+package com.revature.repository;
+
+import java.util.List;
+
+import com.revature.beans.Reaction;
+
+public interface ReactionRepositoryCustom {
+	List<Reaction> add(Number point)
+}

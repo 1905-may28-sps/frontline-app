@@ -1,0 +1,41 @@
+package com.revature.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.revature.beans.Post;
+import com.revature.beans.Reaction;
+import com.revature.beans.ReactionType;
+import com.revature.repository.ReactionRepository;
+
+@Service
+public class ReactionService {
+	@Autowired
+	ReactionRepository reactRepo;
+
+	public List<Reaction> getall() {
+		return reactRepo.findAll();
+	}
+	
+	
+	public Reaction add(Reaction r) {
+		//update post points based on reaction
+		switch() {
+		  case 1:
+		    Post.setPoint(Post.getPoint() + 1); 
+		    break;
+		  case 2:
+		    Post.setPoint(Post.getPoint() - 1);
+		    break;
+		  case 3:
+			Post.setPoint(Post.getPoint() + 1);
+			    break;
+		  default:    
+		}
+		
+		
+		return reactRepo.save(r);
+	}
+}
